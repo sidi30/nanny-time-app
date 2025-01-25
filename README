@@ -1,0 +1,2 @@
+git clone --recurse-submodules https://github.com/sidi30/nanny-time-app.git pour cloner
+git submodule update --remote pour mettre a jour

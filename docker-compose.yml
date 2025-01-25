@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"  # Expose le backend
+    environment:
+      - QUARKUS_PROFILE=dev
+    volumes:
+      - ./backend/src:/project/src
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "4200:80"  # Expose le frontend
+    volumes:
+      - ./frontend/src:/app/src
+    depends_on:
+      - backend
+
+  database:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: nanny
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: nanny_db
+    ports:
+      - "5432:5432"

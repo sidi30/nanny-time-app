@@ -1,0 +1,6 @@
+[submodule "nounou-times"]
+	path = nounou-times
+	url = https://github.com/sidi30/nounou-times.git
+[submodule "nounou-front"]
+	path = nounou-front
+	url = https://github.com/sidi30/nounou-front.git
